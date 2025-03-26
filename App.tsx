@@ -1,10 +1,11 @@
+
+//          1st
+
 // import { Image, StyleSheet, Text, View } from 'react-native'
 // import images from './images'
 // import React from 'react'
 
 // const App = () => {
-
-
 
 //   return (
 //     <View style={styles.container}>
@@ -116,140 +117,175 @@
 //   }
 // })
 
-import { Image, StyleSheet, Text, TextInput, View } from 'react-native'
-import React, { useState } from 'react'
-import images from './images'
+
+//        2nd
+// import React, { useState } from 'react';
+// import { Image, StyleSheet, Text, TextInput, View, TouchableOpacity, Alert } from 'react-native';
+// import images from './images';
+
+// const Inputs = (({ placeholder, imageSource, endImageSource, value, onChangeText, passwordentry, onToggleVisibility, autoCapitalize }) => {
+//   return (
+//     <View style={styles.login}>
+//       <Image source={imageSource} style={styles.icon} />
+//       <TextInput
+//         placeholder={placeholder}
+//         placeholderTextColor={'#666161'}
+//         value={value}
+//         onChangeText={onChangeText}
+//         secureTextEntry={passwordentry}
+//         style={{ flex: 1 }}
+//         autoCapitalize={autoCapitalize}
+//       />
+//       {endImageSource && (
+//         <TouchableOpacity onPress={onToggleVisibility}>
+//           <Image source={endImageSource} style={styles.eyeicon} />
+//         </TouchableOpacity>
+//       )}
+//     </View>
+//   );
+// });
+
+// const App = () => {
+//   const [email, setEmail] = useState('');
+//   const [userName, setUserName] = useState('');
+//   const [password, setPassword] = useState('');
+//   const [errors, setErrors] = useState({});
+//   const [passwordVisible, setPasswordVisible] = useState(false);
+
+//   const validate = () => {
+//     let newErrors: any = {};
+
+//     if (!email) {
+//       newErrors.email = 'Email is required!';
+//     } else if (!/\S+@\S+\.\S+/.test(email)) {
+//       newErrors.email = 'Enter a valid email!';
+//     }
+
+//     if (!userName) {
+//       newErrors.userName = 'Username is required!';
+//     } else if (!/^[0-9A-Za-z]{6,16}$/.test(userName)) {
+//       newErrors.userName = 'Enter a valid username!';
+//     }
+
+//     if (!password) {
+//       newErrors.password = 'Password is required!';
+//     } else if (!/^(?=.*?[0-9])(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[^0-9A-Za-z]).{8,32}$/.test(password)) {
+//       newErrors.password = 'Enter a valid password!';
+//     }
+
+//     setErrors(newErrors);
+//     return Object.keys(newErrors).length === 0;
+//   };
+
+//   const handleRegister = () => {
+//     if (validate()) {
+//       Alert.alert("Registered Successfully")
+//     }
+//   };
+
+//   return (
+//     <View style={styles.container}>
+//       <View style={styles.background}>
+//         <Image style={styles.loginImage} source={images.loginR} />
+
+//         <Inputs imageSource={images.email} placeholder="Email" value={email} onChangeText={setEmail} autoCapitalize="none" />
+//         {errors.email && <Text style={styles.errortxt}>{errors.email}</Text>}
+
+//         <Inputs imageSource={images.user} placeholder="Username" value={userName} onChangeText={setUserName} autoCapitalize="none"
+//         />
+
+//         {errors.userName && <Text style={styles.errortxt}>{errors.userName}</Text>}
+
+//         <Inputs
+//           imageSource={images.password}
+//           placeholder="Password"
+//           endImageSource={images.eye}
+//           passwordentry={!passwordVisible}
+//           value={password}
+//           onChangeText={setPassword}
+//           onToggleVisibility={() => setPasswordVisible(!passwordVisible)}
+//         />
+//         {errors.password && <Text style={styles.errortxt}>{errors.password}</Text>}
+
+//         <TouchableOpacity style={styles.btn} onPress={handleRegister}>
+//           <Text style={styles.registerBtn}>Register</Text>
+//         </TouchableOpacity>
+//       </View>
+//     </View>
+//   );
+// };
+
+// export default App;
+
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//   },
+//   background: {
+//     flex: 1,
+//     backgroundColor: '#22C7A9',
+//     alignItems: 'center',
+//     justifyContent: 'center',
+//   },
+//   loginImage: {
+//     marginBottom: 20,
+//     height: 260,
+//     width: 265,
+//   },
+//   login: {
+//     marginTop: 20,
+//     backgroundColor: 'white',
+//     width: 300,
+//     height: 40,
+//     borderRadius: 10,
+//     flexDirection: 'row',
+//     alignItems: 'center',
+//     paddingHorizontal: 10,
+//   },
+//   icon: {
+//     height: 20,
+//     width: 20,
+//     marginRight: 10,
+//   },
+//   btn: {
+//     borderRadius: 50,
+//     backgroundColor: '#DFB497',
+//     height: 40,
+//     width: 270,
+//     justifyContent: 'center',
+//     alignItems: 'center',
+//     marginTop: 20,
+//     shadowColor: 'black',
+//     shadowOffset: { width: 0, height: 4 },
+//     shadowOpacity: 0.5,
+//     shadowRadius: 4,
+//   },
+//   registerBtn: {
+//     color: 'white',
+//     fontSize: 16,
+//     fontWeight: 'bold',
+//   },
+//   eyeicon: {
+//     height: 15,
+//     width: 20,
+//   },
+//   errortxt: {
+//     color: 'red',
+//     marginTop: 5,
+//   },
+// });
+
+import { StyleSheet, Text, View } from 'react-native'
+import React from 'react'
 
 const App = () => {
-
-  const [email, setEmail] = useState('')
-  const [userName, setuserName] = useState('')
-  const [password, setPassword] = useState('')
-  const [errors, setErrors] = useState('')
-
-
-  const validate = () => {
-    let newErrors = {};
-
-    if (!email) {
-      newErrors.email = "Email is required!";
-    } else if (!/\S+@\S+\.\S+/.test(email)) {
-      newErrors.email = "Enter a valid email!";
-    }
-
-    if (!userName) {
-      newErrors.userName = "User name is required"
-    } else if (/^[0-9A-Za-z]{6,16}$/.test(userName)) {
-      newErrors.userName = "Enter valid email"
-    }
-
-    if (!password) {
-      newErrors.password = "Password is required"
-    } else if (/^(?=.*?[0-9])(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[^0-9A-Za-z]).{8,32}$/.test(password))
-      newErrors.password = "Enter valid Password"
-
-    setErrors(newErrors)
-
-    if (Object.keys(newErrors).length === 0) {
-      Alert.alert("Success", "Form Submitted!");
-    }
-
-  }
-
-
-
-  const Inputs = ({ placeholder, imageSource, endImageSource }) => {
-    return (
-      <View>
-      <View style={styles.login}>
-        <Image source={imageSource} style={styles.icon} />
-        <TextInput placeholder={placeholder} placeholderTextColor={'#666161'} />
-        {endImageSource && <Image source={endImageSource} style={styles.eyeicon} />}
-      </View>
-      {error && <Text style={styles.errorText}>{error}</Text>}
- </View>
-    )
-  }
-
   return (
-    <View style={styles.container}>
-      <View style={styles.background}>
-        <Image
-          style={styles.loginImage}
-          source={images.loginR}
-        />
-
-        <Inputs imageSource={images.email} placeholder={"Email"} />
-        <Inputs imageSource={images.user} placeholder={"Username"} />
-        <Inputs imageSource={images.password} placeholder={"Password"} endImageSource={images.eye} />
-
-        <View style={styles.btn}>
-          <Text style={styles.registerBtn}>
-            Register
-          </Text>
-        </View>
-
-      </View>
+    <View>
+      <Text>App</Text>
     </View>
   )
 }
 
 export default App
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  background: {
-    flex: 1,
-    backgroundColor: '#22C7A9',
-  },
-  loginImage: {
-    marginTop: 70,
-    marginLeft: 45,
-    height: 260,
-    width: 265,
-  },
-  login: {
-    marginTop: 19,
-    backgroundColor: 'white',
-    width: 300,
-    marginLeft: 35,
-    height: 40,
-    borderRadius: 10,
-    display: 'flex',
-    flexDirection: 'row'
-  },
-  icon: {
-    height: 20,
-    width: 20,
-    marginLeft: 15,
-    marginTop: 10,
-    marginRight: 10,
-  },
-  btn: {
-    borderRadius: 50,
-    backgroundColor: '#DFB497',
-    height: 40,
-    width: 270,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: 20,
-    marginLeft: 50,
-    shadowColor: 'black',
-    shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.5,
-    shadowRadius: 4,
-  },
-  registerBtn: {
-    color: 'white',
-    fontSize: 16,
-    fontWeight: 'bold',
-  },
-  eyeicon: {
-    marginLeft: 150,
-    marginTop: 12,
-    height: 15,
-    width: 20,
-  },
-})
+const styles = StyleSheet.create({})
