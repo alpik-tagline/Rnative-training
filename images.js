@@ -8,6 +8,7 @@ const images = {
     user:require('./images/person.png'),
     password:require('./images/password.png'),
     eye:require('./images/eye1.png'),
+    girl:require('./images/girl.png')
   };
   
   export default images;
