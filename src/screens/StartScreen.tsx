@@ -1,7 +1,8 @@
 import { Image, StyleSheet, Text, View, TouchableOpacity } from 'react-native';
-import images from '../images';
+import images from '../utis/imagePaths';
 import React from 'react';
 import { useNavigation } from '@react-navigation/native';
+import appStrings from '../utis/appStrings';
 
 const StartScreen = () => {
     const navigation = useNavigation();
@@ -12,18 +13,17 @@ const StartScreen = () => {
                 <View>
                     <Image style={styles.img} source={images.allnewd} />
                     <View style={styles.desc}>
-                        <Text style={styles.ftext}>Foodienator</Text>
+                        <Text style={styles.ftext}>{appStrings.Foodienator}</Text>
                         <View style={styles.desctext}>
-                            <Text style={styles.descText1}>Order your favorite Meals</Text>
-                            <Text style={styles.descText2}>Here!</Text>
+                            <Text style={styles.descText1}>{appStrings.Order}</Text>
                         </View>
                     </View>
                     <View style={styles.loginRegister}>
                         <TouchableOpacity style={styles.signin} onPress={() => navigation.navigate('Login')}>
-                            <Text style={styles.buttonText}>Sign in</Text>
+                            <Text style={styles.buttonText}>{appStrings.Signin}</Text>
                         </TouchableOpacity>
                         <TouchableOpacity style={styles.register} onPress={() => navigation.navigate('Register')}>
-                            <Text style={styles.registerText}>Register</Text>
+                            <Text style={styles.registerText}>{appStrings.Register}</Text>
                         </TouchableOpacity>
                     </View>
                 </View>
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     container: { flex: 1 },
     background: { flex: 1, backgroundColor: '#22C7A9' },
     img: { marginTop: 90, marginLeft: 75, width: 260, height: 300 },
-    ftext: { fontFamily: 'Poppins', fontSize: 33, fontWeight: '900', color: 'white', marginTop: 25, marginLeft: 80 },
+    ftext: { fontSize: 33, fontWeight: '900', color: 'white', marginTop: 25, marginLeft: 80 },
     desc: { marginTop: 10 },
     desctext: { marginTop: 5 },
     descText1: { marginLeft: 95, color: 'white', fontSize: 14 },

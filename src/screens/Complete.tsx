@@ -1,15 +1,16 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import React from 'react';
-import images from '../images';
+import images from '../utis/imagePaths';
 import { useNavigation, CommonActions } from '@react-navigation/native';
+import appStrings from '../utis/appStrings';
 
 const Complete = () => {
+
   const navigation = useNavigation();
 
   const handleLogout = () => {
     navigation.dispatch(
       CommonActions.reset({
-        index: 0,
         routes: [{ name: 'StartScreen' }],
       })
     );
@@ -22,13 +23,11 @@ const Complete = () => {
           <Image source={images.girl} style={styles.girlPic} />
         </View>
         <View style={styles.alltext}>
-          <Text style={styles.reg}>Registration</Text>
-          <Text style={styles.complete}>Complete</Text>
+          <Text style={styles.reg}>{appStrings.RegistrationComplete}</Text>
         </View>
 
-
         <TouchableOpacity style={styles.btn} onPress={handleLogout}>
-          <Text style={styles.cbtn}>Logout</Text>
+          <Text style={styles.cbtn}>{appStrings.Logout}</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -52,13 +51,11 @@ const styles = StyleSheet.create({
     width: 200,
   },
   reg: {
-    fontFamily: 'Poppins',
     fontSize: 25,
     color: '#464444',
     fontWeight: 'bold',
   },
   complete: {
-    fontFamily: 'Poppins',
     fontSize: 25,
     fontWeight: 'bold',
     color: '#464444',
