@@ -8,7 +8,9 @@ const images = {
     user:require('./images/person.png'),
     password:require('./images/password.png'),
     eye:require('./images/eye1.png'),
-    girl:require('./images/girl.png')
+    girl:require('./images/girl.png'),
+    loginn:require('./images/loginn.png'),
+    openeye:require('./images/eye.png'),
   };
   
   export default images;
